@@ -1,0 +1,799 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="data:application/manifest+json;base64,ewogICJzaG9ydF9uYW1lIjogIiIsCiAgIm5hbWUiOiAiIiwKICAiaWNvbnMiOiBbewogICAgInNyYyI6ICJpY29uLnBuZyIsCiAgICAidHlwZSI6ICJpbWFnZS9wbmciLAogICAgInNpemVzIjogIjE5MngxOTIiCiAgfV0sCiAgInN0YXJ0X3VybCI6ICIvP3V0bV9zb3VyY2U9aG9tZXNjcmVlbiIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiI2ZhZmFmYSIsCiAgInRoZW1lX2NvbG9yIjogIiNmYWZhZmEiCn0K">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <!-- Place favicon.ico in the root directory -->
+
+
+
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */html{color:#222;font-size:1em;line-height:1.4}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{border:0;margin:0;padding:0}textarea{resize:vertical}.hidden,[hidden]{display:none!important}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}.sr-only.focusable:active,.sr-only.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;white-space:inherit;width:auto}.invisible{visibility:hidden}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}@media print{*,*:before,*:after{background:#fff!important;color:#000!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}a[href^="#"]:after,a[href^="javascript:"]:after{content:""}pre{white-space:pre-wrap!important}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}}*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}.sidebar{width:25vw;background-color:#222;height:100vh;padding-top:40px;position:fixed;top:0;left:0;bottom:0}.sidebar-item{display:block;padding:10px 20px;cursor:pointer;color:#fff;transition:background-color .2s ease-in-out}.sidebar-item:hover{background-color:#444}.sidebar-item.active{background-color:#666}.main{margin-left:25vw;padding:20px}.main a{display:block;margin:20px 0}.view-content{padding:20px;display:none}
+  </style>
+</head>
+
+<body>
+
+<!-- Add your site or application content here -->
+<div class="sidebar">
+  <div class="sidebar-item" id="view1" onclick="changeView('view1')">Предсказание сердечных приступов</div>
+  <div class="sidebar-item" id="view2" onclick="changeView('view2')">Детектирование мошеннических транзакций</div>
+  <div class="sidebar-item" id="view3" onclick="changeView('view3')">Анализ настроений твитов</div>
+  <div class="sidebar-item" id="view4" onclick="changeView('view4')">Предсказание оттока пользователей</div>
+  <div class="sidebar-item" id="view5" onclick="changeView('view5')">Классификация изображений животных</div>
+  <div class="sidebar-item" id="view6" onclick="changeView('view6')">Распознавание эмоций</div>
+</div>
+<div class="main">
+  <div id="view1-content" class="view-content">
+    <h1>Предсказание сердечных приступов</h1>
+    <p>Задача была реализована с использованием knn классификатора; для поиска оптимальных параметров из модели
+      использовался GridSearch. В результате классификации было получено большое количество ложноотрицательных
+      результатов (т.е. пациенты с высоким риском были определены моделью в класс с низким риском).</p>
+    <a target="_blank"
+       href="https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset">Источник
+      данных</a>
+    <div style="background-color: rgb(42, 45, 61); padding: 10px">
+      <code style="white-space: pre-line; color: aquamarine; font-size: 13px">
+        import matplotlib.pyplot as plt
+        import pandas as pd
+        import seaborn as sns
+        from sklearn.model_selection import train_test_split
+        from sklearn.preprocessing import MinMaxScaler
+        from sklearn.neighbors import KNeighborsClassifier
+        from sklearn.model_selection import GridSearchCV
+        from sklearn.metrics import classification_report
+        from sklearn.metrics import confusion_matrix
+        df = pd.read_csv('heart.csv')
+        df.head()
+        df.drop_duplicates()
+        print(df.info())
+        #поскольку количество non-null значений совпадает с количеством записей в датафрейме, а также все типы данных
+        соответствуют численным типам, можно сделать вывод, что данные заполнены корректно, без пропусков
+        #также, поскольку типы данных соответствует числовым, отсутствует необходимость в перекодировке категориальных
+        признаков
+        df.isnull().sum() # смотрим количество нулевых значений в датафрейме
+        # определяем количество элементов в каждой категории для класса output
+        df['output'].value_counts()
+        sns.countplot(df['output'])
+        df.describe()
+        categorial = ["sex", "cp","fbs","restecg","exng","slp","caa","thall","output"]
+        df_categorial = df.loc[:, categorial]
+        for i in categorial:
+        plt.figure()
+        sns.countplot(x = i, data = df_categorial, hue = "output")
+        plt.title(i)
+        plt.figure(figsize=(12,8))
+        plt.title("Heatmap of Attribute Correlations")
+        sns.heatmap(df.corr(), annot=True)
+        plt.show()
+        # проведем группировку по целевой переменной
+        df.groupby(['output']).describe(percentiles=[])
+        #Исходя из представленных выше данных: -для высокого риска средний возраст составляет 52 года, для низкого - 57
+        лет, -наибольшее количество человек из группы риска (output = 1) принадлежат полу с категорией “1”
+        #Исходя из корреляционной карты, наблюдается прямая зависимость между параметрами cp, thalachh, slp; также
+        наблюдается обратная зависимость между exng и oldpeak (к параметру output)
+        Y = df['output']
+        X=df.iloc[:,:13]
+        X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=42) # производим разбивку данных
+        на тренировочные и тестировочные
+        # проведем нормализацию данных
+        stand_scaler = MinMaxScaler()
+        X_train = stand_scaler.fit_transform(X_train)
+        X_test = stand_scaler.fit_transform(X_test)
+        KNN = KNeighborsClassifier()
+        knn_grid = {'n_neighbors': range(10, 100, 10), 'weights': ['uniform', 'distance']}
+        gs = GridSearchCV(estimator=KNN, param_grid=knn_grid, cv=10)
+        gs.fit(X_train, Y_train)
+        print('Лучший результат:', gs.best_score_)
+        print('Лучшая комбинация гиперпараметров:', gs.best_params_)
+        print('Лучшая модель, обученная гиперпараметрам:', gs.best_estimator_)
+        estimator = gs.best_estimator_ # Обучение модели с лучшими гиперпараметрами
+        Y_test_pred = estimator.predict(X_test)
+        print(classification_report(Y_test, Y_test_pred))
+        conf_matrix = confusion_matrix(Y_test, Y_test_pred)
+        sns.heatmap(conf_matrix, cmap="Blues", annot=True)
+        plt.title("Confusion Matrix",fontsize=15)
+        plt.xlabel("Predicted")
+        plt.ylabel("True")
+        #Большое количество ложноотрицательных результатов на test (классификатор определяет как "низкий риск" для
+        пациентов с высоким риском).
+      </code>
+    </div>
+  </div>
+
+
+  <div id="view2-content" class="view-content" style="display: none;">
+    <h1>Детектирование мошеннических транзакций</h1>
+    <p>Рассмотрено 2 алгоритма: KNN и логистическая регрессия. Сравнение двух моделей: исходя из сравнения AUC
+      (micro-average AUC KNN 0.93 против 0.99 для логистической регрессии). Сравнение эффективности моделей в данном
+      случае будет в пользу логистической регрессии (лучшая точность для первого класса) .Для увеличения эффективности
+      следует увеличить объем тренировочных данных (уменьшить параметр UnderSampling и увеличить OverSampling).
+    </p>
+    <a target="_blank"
+       href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud">Источник
+      данных</a>
+    <div style="background-color: rgb(42, 45, 61); padding: 10px">
+      <code style="white-space: pre-line; color: aquamarine; font-size: 13px">
+        import pandas as pd
+        import numpy as np
+        from sklearn.model_selection import train_test_split
+        from sklearn.preprocessing import MinMaxScaler
+        import seaborn as sns
+        from dask.distributed import Client, progress
+        import matplotlib.pyplot as plt
+        from imblearn.under_sampling import RandomUnderSampler
+        from imblearn.over_sampling import RandomOverSampler
+        from sklearn.pipeline import Pipeline
+        df = pd.read_csv('creditcard.csv')
+        df.drop_duplicates()
+        df.info()
+        df.isnull().sum()
+        print(df['Class'].value_counts())
+        sns.countplot(df['Class'])
+        #Поскольку данные несбалансированные, можно воспользоваться двумя способами (использованы оба одновременно):
+        -добавим копии экземпляров из недостаточно представленного класса в тренировочных данных, -при анализе метрик
+        рассмотрим ROC кривую.
+        plt.figure(figsize=(25,20))
+        plt.title("Heatmap of Attribute Correlations")
+        sns.heatmap(df.corr(), annot=True)
+        plt.show()
+        #- Из тепловой карты видна линейная зависимость класса объекта от параметров перевода (Vi), а также линейной
+        зависимости суммы перевода от параметров перевода (Vi);- Логичным выглядит отсутствие временной зависимости
+        мошеннических операций (Class = 1) и отсутствие явной зависимости частоты мошеннических операций от суммы
+        перевода.
+        df.plot(subplots=True, figsize = (20, 40))
+        client = Client()
+        client
+        y = df['Class']
+        X=df.iloc[:, 1:30]
+        X_train,X_test,Y_train,Y_test=train_test_split(X,y,test_size=0.3,random_state=40) # производим разбивку данных
+        на тренировочные и тестировочные
+        over = RandomOverSampler(sampling_strategy=0.05)
+        X_train, Y_train = over.fit_resample(X_train, Y_train)
+        under = RandomUnderSampler(sampling_strategy=0.8)
+        X_train, Y_train = under.fit_resample(X_train, Y_train)
+        unique, counts = np.unique(Y_train, return_counts=True)
+        print(np.asarray((unique, counts)).T)
+        #KNN
+        from sklearn.neighbors import KNeighborsClassifier
+        from sklearn.model_selection import GridSearchCV
+        stand_scaler = MinMaxScaler()
+        X_train = stand_scaler.fit_transform(X_train)
+        X_test = stand_scaler.fit_transform(X_test)
+        KNN = KNeighborsClassifier()
+        pipe1 = Pipeline([('scaler', stand_scaler), ('cls', KNN)]) #создаем пайплайн
+        knn_grid = {"cls__n_neighbors": range(10, 150, 5), "cls__weights": ['uniform', 'distance']} #задаем сетку с
+        гиперпараметрами
+        gs = GridSearchCV(pipe1, param_grid=knn_grid, cv=10, scoring='roc_auc')
+        import joblib
+        with joblib.parallel_backend('dask'):
+        gs.fit(X_train, Y_train)
+        print('Лучшая комбинация гиперпараметров:', gs.best_params_)
+        print('Лучшая модель, обученная гиперпараметрам:', gs.best_estimator_)
+        from sklearn.metrics import classification_report
+        estimator = gs.best_estimator_ # Обучение модели с лучшими гиперпараметрами
+        Y_test_pr_knn = estimator.predict(X_test)
+        print(classification_report(Y_test, Y_test_pr_knn))
+        Y_test_pr_knn = gs.predict_proba(X_test)
+        import scikitplot as skplt
+        skplt.metrics.plot_roc_curve(Y_test, Y_test_pr_knn)
+        plt.show()
+        #Логистическая регрессия
+        from sklearn.linear_model import LogisticRegression
+        lr = LogisticRegression()
+        pipe2 = Pipeline([('scaler', stand_scaler), ('cls', lr)])
+        lr_grid = {"cls__penalty": ['l1', 'l2', 'elastic-net'], "cls__C": [0.01, 0.1, 1, 2, 10, 100]}
+        gs = GridSearchCV(pipe2, param_grid=lr_grid, cv=10)
+        import joblib
+        with joblib.parallel_backend('dask'):
+        gs.fit(X_train, Y_train)
+        print('Лучшая комбинация гиперпараметров:', gs.best_params_)
+        print('Лучшая модель, обученная гиперпараметрам:', gs.best_estimator_)
+        from sklearn.metrics import classification_report
+        estimator = gs.best_estimator_ # Обучение модели с лучшими гиперпараметрами
+        Y_test_pr_lr = estimator.predict(X_test)
+        print(classification_report(Y_test, Y_test_pr_lr))
+        Y_test_pr_lr = gs.predict_proba(X_test)
+        skplt.metrics.plot_roc_curve(Y_test, Y_test_pr_lr)
+        plt.show()
+      </code>
+    </div>
+  </div>
+
+
+  <div id="view3-content" class="view-content" style="display: none;">
+    <h1>Анализ настроений твитов</h1>
+    <p>Реализовано предсказание настроений с помощью классических алгоритмов + tf-idf. Для логистической регрессии
+      получились наилучшие метрики, при этом в k means распознавание для класса 1 наихудшее среди всех остальных
+      моделей.</p>
+    <a target="_blank"
+       href="https://www.kaggle.com/datasets/arkhoshghalb/twitter-sentiment-analysis-hatred-speech">Источник
+      данных</a>
+    <div style="background-color: rgb(42, 45, 61); padding: 10px">
+      <code style="white-space: pre-line; color: aquamarine; font-size: 13px">
+        import pandas as pd
+        import numpy as np
+        import re
+        from sklearn.feature_extraction.text import TfidfVectorizer
+        from sklearn.model_selection import train_test_split
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.neighbors import KNeighborsClassifier
+        from sklearn.naive_bayes import MultinomialNB
+        from sklearn.metrics import classification_report
+        import matplotlib.pyplot as plt
+        from sklearn.cluster import KMeans
+        train = pd.read_csv('train.csv')
+        test = pd.read_csv('test.csv')
+        print(len(test) / len(train)) #в таком соотношении в дальнейшем сделаем разбивку на train и test
+        df = train.append(test)
+        df.head()
+        df.info()
+        df['label'].value_counts() #видим дисбаланс
+        from stop_words import get_stop_words
+        stop_words = get_stop_words('english')
+        stop_words
+        #убираем всё, кроме пробелов и слов
+        tweets = df['tweet']
+        tweets = tweets.str.lower()
+        tweets = tweets.apply(lambda x: re.sub("[^a-z\s]", "", x))
+        tweets = tweets.str.replace("#", " ")
+        tweets = tweets.apply(lambda x: ' '.join([w for w in x.split() if len(w) > 2]))
+        X = np.array(tweets[: len(train)])
+        y = df['label'][:len(train)]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3498, random_state=40)
+        vectorizer = TfidfVectorizer(stop_words=stop_words[:10])
+        X_train_vectors = vectorizer.fit_transform(X_train)
+        X_test_vectors = vectorizer.transform(X_test)
+        X_test_vectors = vectorizer.transform(X_test)
+        #%%
+        wcss = []
+        for i in range(1, 11):
+        clustering = KMeans(n_clusters=i, init='k-means++', max_iter=300,
+        n_init=10,
+        random_state=0 )
+        clustering.fit(X_train_vectors)
+        wcss.append(clustering.inertia_)
+        plt.plot(range(1, 11), wcss)
+        plt.grid()
+        plt.tight_layout()
+        plt.title('The Elbow Method', fontsize = 20)
+        plt.xlabel('No. of Clusters', fontsize = 16)
+        plt.ylabel('wcss', fontsize = 16)
+        plt.show()
+        lg = LogisticRegression(C=10, max_iter=1000).fit(X_train_vectors, y_train)
+        y_pred_lg = lg.predict(X_test_vectors)
+        nb = MultinomialNB().fit(X_train_vectors, y_train)
+        y_pred_nb = nb.predict(X_test_vectors)
+        knn = KNeighborsClassifier().fit(X_train_vectors, y_train)
+        y_pred_knn = knn.predict(X_test_vectors)
+        kmeans = KMeans(n_clusters=7).fit(X_train_vectors)
+        y_pred_kmeans = kmeans.predict(X_test_vectors)
+        print(classification_report(y_test, y_pred_lg))
+        print(classification_report(y_test, y_pred_nb))
+        print(classification_report(y_test, y_pred_knn))
+        print(classification_report(y_test, y_pred_kmeans))
+      </code>
+    </div>
+  </div>
+
+
+  <div id="view4-content" class="view-content" style="display: none;">
+    <h1>Предсказание оттока пользователей кредитных карт</h1>
+    <p>Использованы модели: XGboost, CatBoost и ансамбль двух моделей. При учете дисбаланса реализован OverSampling,
+      однако метрики при этом упали, поэтому для анализа были оставлены данные с дисбалансом (исходные). Лучшие метрики
+      получились с использованием ансамбля.</p>
+    <a target="_blank"
+       href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers">Источник
+      данных</a>
+    <div style="background-color: rgb(42, 45, 61); padding: 10px">
+      <code style="white-space: pre-line; color: aquamarine; font-size: 13px">
+        import pandas as pd
+        import numpy as np
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+        import warnings
+        warnings.filterwarnings('ignore')
+        df = pd.read_csv('BankChurners.csv')
+        df.head()
+        # Удаляем ненужные колонки client id, naive bayes
+        drop_cols = list(df.iloc[:, [0, -1, -2]].columns)
+        df.drop(columns=drop_cols, inplace=True)
+        df
+        df.info()
+        df.isnull().sum()
+        # смотрим количество нулевых значений в датафрейме
+        # определяем количество элементов в каждой категории для класса output
+        df['Attrition_Flag'].value_counts()
+        print(
+        df[df['Attrition_Flag'] == 'Existing Customer'].shape[0] / df[df['Attrition_Flag'] == 'Attrited Customer'].shape[0])
+        sns.countplot(df['Attrition_Flag'])
+        #кодировка категориальных признаков
+        from sklearn import preprocessing
+
+        def number_encode_features(init_df):
+        result = init_df.copy()
+        encoders = {}
+        for column in result.columns:
+        if result.dtypes[column] == np.object:
+        encoders[column] = preprocessing.LabelEncoder()
+        result[column] = encoders[column].fit_transform(result[column])
+        return result, encoders
+
+        encoded_data, encoders = number_encode_features(df)
+        encoded_data.head()
+        df.plot(subplots=True, figsize=(10, 10))
+        plt.figure(figsize=(12, 8))
+        plt.title("Heatmap of Attribute Correlations")
+        sns.heatmap(df.corr(), annot=True)
+        plt.show()
+        X = encoded_data.drop(columns=['Attrition_Flag'])
+        y = encoded_data['Attrition_Flag']
+        X.shape, y.shape
+        from sklearn.model_selection import train_test_split
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+        from collections import Counter
+        from imblearn.over_sampling import ADASYN
+        # oversampling для балансировки
+        print('До oversampling:', Counter(y_train))
+        augm = ADASYN()
+        X_train_augm, y_train_augm = augm.fit_resample(np.array(X_train), np.array(y_train))
+        print('После oversampling:', Counter(y_train_augm))
+        from sklearn.metrics import classification_report
+        from sklearn.model_selection import GridSearchCV
+        from sklearn.ensemble import AdaBoostClassifier
+        # Обучение перед oversampling
+        param_grid = {'n_estimators': [250, 500, 750, 1000], 'learning_rate': [0.5, 0.1, 0.01]}
+        clf = AdaBoostClassifier()
+
+        grid_search = GridSearchCV(clf, param_grid, cv=5)
+
+        grid_search.fit(X_train_augm, y_train_augm)
+
+        print("Best parameters: ", grid_search.best_params_)
+
+        y_pred = grid_search.predict(X_test)
+
+        print(classification_report(y_test, y_pred))
+        # Обучение не используя oversampling
+        grid_search.fit(X_train, y_train)
+
+        print("Best parameters: ", grid_search.best_params_)
+
+        y_pred = grid_search.predict(X_test)
+
+        print(classification_report(y_test, y_pred))
+        # Gradient descent
+        import xgboost as xgb
+        from catboost import CatBoostClassifier
+        from sklearn.ensemble import StackingClassifier
+
+        # Создаем XGBoost модель
+        xgb_model = xgb.XGBClassifier()
+
+        # Определяем гиперпараметры для XGBoost модель
+        xgb_param_grid = {'objective': ['binary:logistic'],
+        'n_estimators': [250, 500, 1000],
+        'learning_rate': [0.5, 0.1, 0.01],
+        'max_depth': [3, 6, 12]}
+
+        # Создаем CatBoost модель
+        cat_model = CatBoostClassifier()
+
+        # Определяем гиперпараметры для CatBoost модель
+        cat_param_grid = {'iterations': [250, 500, 1000],
+        'learning_rate': [0.5, 0.1, 0.01],
+        'depth': [3, 6, 12],
+        'eval_metric': ['Logloss']}
+
+        # Создаем ансамбль моделей
+        ensemble_model = StackingClassifier(estimators=[('xgb', xgb_model), ('cat', cat_model)],
+        final_estimator=xgb.XGBClassifier(), passthrough=True)
+
+        # Определяем гиперпараметры для ансамбля моделей
+        ensemble_param_grid = {'final_estimator__objective': ['binary:logistic'],
+        'final_estimator__n_estimators': [250, 500, 1000],
+        'final_estimator__learning_rate': [0.5, 0.1, 0.01],
+        'final_estimator__max_depth': [3, 6, 12]}
+
+        # Создаем grid search для XGBoost, CatBoost и ансамбля
+        xgb_grid = GridSearchCV(xgb_model, xgb_param_grid, cv=5)
+        cat_grid = GridSearchCV(cat_model, cat_param_grid, cv=5)
+        ensemble_grid = GridSearchCV(ensemble_model, ensemble_param_grid, cv=5)
+
+        xgb_grid.fit(X_train, y_train)
+        cat_grid.fit(X_train, y_train)
+        ensemble_grid.fit(X_train, y_train)
+
+        xgb_y_pred = xgb_grid.predict(X_test)
+        cat_y_pred = cat_grid.predict(X_test)
+        ensemble_y_pred = ensemble_grid.predict(X_test)
+
+        print(classification_report(y_test, xgb_y_pred))
+        print(classification_report(y_test, cat_y_pred))
+        print(classification_report(y_test, ensemble_y_pred))
+      </code>
+    </div>
+  </div>
+
+
+  <div id="view5-content" class="view-content" style="display: none;">
+    <h1>Классификация изображений животных</h1>
+    <p>Применена аугментация (рандомное аффинное преобразование), использован файнтюнинг (на основе AlexNet). Классификация на 3 класса.</p>
+    <a target="_blank"
+       href="https://www.kaggle.com/datasets/andrewmvd/animal-faces">Источник
+      данных</a>
+    <div style="background-color: rgb(42, 45, 61); padding: 10px">
+      <code style="white-space: pre-line; color: aquamarine; font-size: 13px">
+        import numpy as np
+        import matplotlib.pyplot as plt
+        %matplotlib inline
+        import torch
+        import torch.nn as nn
+        from sklearn.metrics import classification_report
+        from torchvision import datasets, transforms
+        from sklearn.metrics import accuracy_score
+        train_path = "/Desktop/hw-4/train"
+        test_path = "/Desktop/hw-4/val"
+        category_names = ['cat', 'dog', 'wild']
+        transform_train = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.RandomAffine(degrees=30, translate=(0, 0.1), scale=(0.9, 1), shear=(2, 4)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]),
+        ])
+
+        transform_val = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]),
+        ])
+        train_data = datasets.ImageFolder(train_path, transform=transform_train)
+        test_data = datasets.ImageFolder(test_path, transform=transform_val)
+        train_data
+        train_loader = torch.utils.data.DataLoader(train_data, batch_size=64, shuffle = True, pin_memory=True, num_workers=2)
+        test_loader = torch.utils.data.DataLoader(test_data, batch_size=64, shuffle = False, pin_memory=True, num_workers=2)
+        dataiter = iter(train_loader)
+        images, labels = next(dataiter)
+        print(images, labels)
+        from torchvision import models
+        alexnet = models.alexnet(pretrained=True)
+        alexnet.parameters
+        alexnet.classifier = nn.Sequential(*list(alexnet.classifier.children()))[:-1]
+        #%%
+        alexnet.parameters
+        class Alexnet(nn.Module):
+        def __init__(self):
+        super().__init__()
+        self.alexnet = alexnet # вся огромная нейросеть в одну строчку
+        for param in self.alexnet.features.parameters(): # отключаем для нее обновление параметров
+        param.requires_grad = False
+        self.fc = nn.Linear(4096, 3) # добавляем новый слой
+
+        def forward(self, x):
+        # forward pass сети
+        # умножение на матрицу весов 1 слоя и применение функции активации
+        x = self.alexnet(x)
+        x = self.fc(x)
+        return x
+        from tqdm.notebook import tqdm
+        def train(net, n_epoch=100):
+        loss_history = []
+        last_loss = 100
+        patience = 5
+        triggertimes = 0
+        best_accuracy = 0
+        loss_fn = torch.nn.CrossEntropyLoss()
+        optimizer = torch.optim.Adam(net.parameters(), lr=0.0001)
+        for epoch in tqdm(range(n_epoch)):
+        running_loss = 0.0
+        train_dataiter = iter(train_loader)
+        for i, batch in enumerate(tqdm(train_dataiter)):
+        X_batch, y_batch = batch
+        optimizer.zero_grad()
+        y_pred = net(X_batch)
+        loss = loss_fn(y_pred, y_batch)
+        loss.backward()
+        optimizer.step()
+        if i % 1500 ==0:
+        with torch.no_grad():
+        accuracy = []
+        for batch in test_loader:
+        x, y = batch
+        y_pred = net(x)
+        loss = loss_fn(y_pred, y)
+        accuracy.append(accuracy_score(y.detach().numpy(), np.argmax(y_pred.detach().numpy(), axis=1)))
+        accuracy = np.mean(np.array(accuracy))
+        if accuracy > best_accuracy:
+        print('New best model with test acc:', accuracy)
+        torch.save(net.state_dict(), './best_model.pt')
+        best_accuracy = accuracy
+        running_loss += loss.item()
+        print('The Current Loss:', running_loss)
+        loss_history.append(running_loss)
+        if running_loss > last_loss:
+        triggertimes += 1
+        print('Trigger Times:', triggertimes)
+        if triggertimes >= patience:
+        print('Early stopping')
+        return net
+        else:
+        print('trigger times: 0')
+        triggertimes = 0
+        last_loss = running_loss
+        plt.figure(figsize = (10, 8))
+        plt.plot(loss_history)
+        plt.ylabel('Loss')
+        plt.show()
+        print('Обучение закончено')
+        return net
+        net = Alexnet()
+        result = train(net)
+        test_dataiter = iter(test_loader)
+        images, labels = next(test_dataiter)
+        labels_preds = []
+        labels_true = []
+        for images, labels in test_loader:
+        labels_true.append(labels)
+        labels_preds.append(result.forward(images).detach().cpu().numpy())
+        final_preds = np.concatenate(labels_preds).argmax(axis=1)
+        real = np.concatenate(labels_true)
+        print(classification_report(real, final_preds))
+      </code>
+    </div>
+  </div>
+
+
+  <div id="view6-content" class="view-content" style="display: none;">
+    <h1>Распознавание эмоций</h1>
+    <p>Произведено дообучение VGG16 для текущей задачи. Также производится конвертация полученной модели в onnx-формат и сравнение времени работы.</p>
+    <a target="_blank"
+       href="https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset">Источник
+      данных</a>
+    <div style="background-color: rgb(42, 45, 61); padding: 10px">
+      <code style="white-space: pre-line; color: aquamarine; font-size: 13px">
+        !pip install onnxruntime
+        import onnxruntime
+        import os
+        import time
+        from PIL import Image
+        import matplotlib.pyplot as plt
+        import cv2
+        from torch.utils.data import DataLoader, Dataset, Subset
+        import numpy as np
+        import matplotlib.pyplot as plt
+        %matplotlib inline
+        import torch
+        import os
+        from PIL import Image
+        import torch.nn as nn
+        from sklearn.metrics import classification_report
+        from torchvision import datasets, transforms
+        from sklearn.metrics import accuracy_score
+        import albumentations
+        from albumentations.pytorch import ToTensorV2
+        from PIL import Image
+        import matplotlib.pyplot as plt
+        from torchvision.io import read_image
+        from torchvision.models import resnet50, ResNet50_Weights
+        device = torch.device('cuda')
+        torch.cuda.is_available()
+        !pip install kaggle
+        !mkdir ~/.kaggle
+        !cp kaggle.json ~/.kaggle/
+        !chmod 600 ~/.kaggle/kaggle.json
+        !kaggle datasets download -d jonathanoheix/face-expression-recognition-dataset
+        !unzip face-expression-recognition-dataset.zip
+        path = os.path.join("./images/images/")
+        train_path = os.path.join(path, "train/")
+        test_path = os.path.join(path, "validation/")
+        transform_train = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.RandomAffine(degrees=30, translate=(0, 0.1), scale=(0.9, 1), shear=(2, 4)),
+        transforms.ToTensor(),
+        transforms.Lambda(lambda x: x.repeat(3, 1, 1)),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5],
+        std=[0.5, 0.5, 0.5]),
+        ])
+        transform_val = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Lambda(lambda x: x.repeat(3, 1, 1)),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5],
+        std=[0.5, 0.5, 0.5]),
+        ])
+        path = os.path.join("./images/images/")
+
+
+        train_path = os.path.join(path, "train/")
+        test_path = os.path.join(path, "validation/")
+        emotions = ["angry", "disgust", "fear", "happy", "neutral", "sad", "surprise"]
+        train_images_filepaths = []
+        train_labels = []
+        for i, emotion in enumerate(emotions):
+        emotion_path = os.path.join(train_path, emotion)
+        emotion_images = [os.path.join(emotion_path, f) for f in os.listdir(emotion_path) if f.endswith(".jpg")]
+        train_images_filepaths += emotion_images
+        train_labels += [i for _ in range(len(emotion_images))]
+
+
+        val_images_filepaths = []
+        val_labels = []
+        for i, emotion in enumerate(emotions):
+        emotion_path = os.path.join(test_path, emotion)
+        emotion_images = [os.path.join(emotion_path, f) for f in os.listdir(emotion_path) if f.endswith(".jpg")]
+        val_images_filepaths += emotion_images
+        val_labels += [i for _ in range(len(emotion_images))]
+        class EmotionsDetectionDataset(Dataset):
+        def __init__(self, image_paths, labels, transforms):
+        self.image_paths = image_paths
+        self.labels = labels
+        self.transforms = transforms
+
+
+        def __len__(self):
+        return len(self.image_paths)
+
+
+        def __getitem__(self, idx):
+        image = Image.open(self.image_paths[idx])
+        label = self.labels[idx]
+        if self.transforms:
+        image = self.transforms(image)
+        return image, label
+        train_set = EmotionsDetectionDataset(train_images_filepaths, train_labels, transform_train)
+        val_set = EmotionsDetectionDataset(val_images_filepaths, val_labels, transform_val)
+        train_loader = DataLoader(train_set, batch_size=64, shuffle=True, drop_last=False, num_workers=0)
+        val_loader = DataLoader(val_set, batch_size=64, shuffle=False, drop_last=False, num_workers=0)
+
+
+        dataiter = iter(train_loader)
+        images, labels = next(dataiter)
+        from torchvision import models
+        vgg16 = models.vgg16(pretrained=True)
+        vgg16.classifier = nn.Sequential(*list(vgg16.classifier.children()))[:-1]
+        vgg16.parameters
+        import torch
+        import torchvision.models as models
+
+
+        class New_VGG16(nn.Module):
+        def __init__(self):
+        super().__init__()
+        self.vgg16 = models.vgg16(pretrained=True)
+        #for param in self.vgg16.features.parameters():
+        #param.requires_grad = False
+        self.fc = nn.Linear(1000, 7)
+
+        def forward(self, x):
+        x = self.vgg16(x)
+        x = self.fc(x)
+        # x = self.vgg16.features(x)
+        # x = x.view(x.size(0), -1)
+        # x = self.fc(x)
+        return x
+        model = New_VGG16()
+
+
+        from tqdm.notebook import tqdm
+
+
+        def train(net, n_epoch=3, val_loader=val_loader):
+        loss_history = []
+        last_loss = float('inf')
+        patience = 5
+        trigger_times = 0
+        best_accuracy = 0
+        optimizer = torch.optim.Adam(net.parameters(), lr=0.00001)
+        loss_fn = nn.CrossEntropyLoss()
+
+
+        for epoch in tqdm(range(n_epoch)):
+        running_loss = 0.0
+        train_dataiter = iter(train_loader)
+        for i, batch in enumerate(tqdm(train_dataiter)):
+        X_batch, y_batch = batch
+        X_batch = X_batch.to(device)
+        y_batch = y_batch.to(device)
+        optimizer.zero_grad()
+        y_pred = net(X_batch)
+        loss = loss_fn(y_pred, y_batch.long())
+        loss.backward()
+        optimizer.step()
+        running_loss += loss.item()
+
+        if val_loader:
+        with torch.no_grad():
+        accuracy = []
+        for x, y in val_loader:
+        x = x.to(device)
+        y = y.to(device)
+        y_pred = net(x)
+        loss = loss_fn(y_pred, y.long())
+        accuracy.append(accuracy_score(y.detach().cpu().numpy(), np.argmax(y_pred.detach().cpu().numpy(), axis=1)))
+        accuracy = np.mean(np.array(accuracy))
+        if accuracy > best_accuracy:
+        print('New best model with validation acc:', accuracy)
+        torch.save(net.state_dict(), './best_model.pt')
+        torch.save(net.state_dict(), "model.onyx")
+        best_accuracy = accuracy
+        loss_history.append(running_loss)
+        print('The Current Loss:', running_loss)
+
+        if running_loss > last_loss:
+        trigger_times += 1
+        if trigger_times >= patience:
+        print('Early stopping')
+        return net
+        else:
+        trigger_times = 0
+        last_loss = running_loss
+        plt.figure(figsize = (10, 8))
+        plt.plot(loss_history)
+        plt.ylabel('Loss')
+        plt.show()
+        print('Training complete')
+        return net
+        result = train(model.to(device))
+        dataiter = iter(val_loader)
+        images, labels = next(dataiter)
+        labels_preds = []
+        labels_true = []
+        start_time = time.time()
+        for images, labels in val_loader:
+        labels_true.append(labels)
+        labels_preds.append(result.forward(images.to(device)).detach().cpu().numpy())
+        final_preds = np.concatenate(labels_preds).argmax(axis=1)
+        real = np.concatenate(labels_true)
+        print(classification_report(real, final_preds))
+        initial_time = time.time() - start_time
+        loaded_model = New_VGG16()
+        loaded_model.load_state_dict(torch.load("model.onyx"))
+        loaded_model.eval()
+        loaded_model.to(torch.device('cuda'))
+        labels_true_onyx = []
+        labels_preds_onyx = []
+        start_time = time.time()
+        for images, labels in val_loader:
+        labels_true_onyx.append(labels)
+        labels_preds_onyx.append(loaded_model.forward(images.to(device)).detach().cpu().numpy())
+        final_preds_onyx = np.concatenate(labels_preds_onyx).argmax(axis=1)
+        real_onyx = np.concatenate(labels_true_onyx)
+        print(classification_report(real_onyx, final_preds_onyx))
+        onyx_time = time.time() - start_time
+        print("Время работы начальной модели составляет [c]:", initial_time, ", время работы onyx модели составляет [c]:", onyx_time)
+      </code>
+    </div>
+  </div>
+</div>
+<script>
+  function changeView(viewId) {
+    var views = document.getElementsByClassName('view-content');
+    var sidebarItems = document.getElementsByClassName('sidebar-item');
+    for (var i = 0; i < views.length; i++) {
+      views[i].style.display = 'none';
+      sidebarItems[i].classList.remove('active');
+    }
+    document.getElementById(viewId + '-content').style.display = 'block';
+    document.getElementById(viewId).classList.add('active');
+  }
+  setTimeout(() => changeView('view1'), 100)
+
+</script>
+</body>
+
+</html>
